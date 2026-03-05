@@ -1,0 +1,238 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head> 
+
+<link rel="stylesheet1" href="CSS/StyleSheet1.css">
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>سافر للسياحة والسفر</title>
+
+<style>
+:root{
+    --main:#7b2cbf;
+    --dark:#5a189a;
+    --light:#f3e8ff;
+}
+
+body{
+    margin:0;
+    font-family:Tahoma, sans-serif;
+    background:#f9f9f9;
+}
+
+nav{
+    background:var(--main);
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    padding:15px 40px;
+    align-items:center;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:20px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:bold;
+}
+
+.hero{
+    background:linear-gradient(rgba(123,44,191,0.85), rgba(90,24,154,0.85)),
+    url('https://images.unsplash.com/photo-1502920917128-1aa500764b06');
+    background-size:cover;
+    background-position:center;
+    height:85vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+.hero h1{
+    font-size:45px;
+    margin-bottom:10px;
+}
+
+.btn{
+    background:white;
+    color:var(--main);
+    padding:12px 25px;
+    text-decoration:none;
+    border-radius:6px;
+    font-weight:bold;
+}
+
+section{
+    padding:60px 20px;
+    text-align:center;
+}
+
+.cards{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+    margin-top:30px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    width:260px;
+    border-radius:12px;
+    box-shadow:0 6px 20px rgba(0,0,0,0.08);
+}
+
+.card h3{
+    color:var(--main);
+}
+
+.office-info{
+    background:var(--light);
+    padding:25px;
+    max-width:550px;
+    margin:30px auto;
+    border-radius:12px;
+}
+
+form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    max-width:450px;
+    margin:auto;
+    margin-top:30px;
+}
+
+form input, form textarea, form select{
+    padding:12px;
+    border:1px solid #ddd;
+    border-radius:6px;
+}
+
+form button{
+    background:var(--main);
+    color:white;
+    padding:14px;
+    border:none;
+    border-radius:6px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+form button:hover{
+    background:var(--dark);
+}
+
+footer{
+    background:var(--dark);
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">SAFER</div>
+    <ul>
+        <li><a href="#">الرئيسية</a></li>
+        <li><a href="#services">خدماتنا</a></li>
+        <li><a href="#contact">تواصل معنا</a></li>
+    </ul>
+</nav>
+
+<section class="hero">
+    <div>
+        <h1>رحلتك تبدأ معنا</h1>
+        <p>خدمات السفر والتأشيرات بأفضل الأسعار</p>
+        <a href="#contact" class="btn">احجز الآن</a>
+    </div>
+</section>
+
+<section id="services">
+    <h2 style="color:var(--main)">خدماتنا</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>حجز تذاكر طيران</h3>
+            <p>أفضل الأسعار لجميع شركات الطيران</p>
+        </div>
+        <div class="card">
+            <h3>حجز فنادق</h3>
+            <p>فنادق 3 و 4 و 5 نجوم</p>
+        </div>
+        <div class="card">
+            <h3>تأشيرات سفر</h3>
+            <p>سياحية - علاجية - دراسة - عمل</p>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <h2 style="color:var(--main)">تواصل معنا</h2>
+
+    <div class="office-info">
+        <p><strong>العنوان:</strong><br>
+        الرمال، شارع الوحدة، عمارة نيرو، الطابق الخامس – غزة</p>
+
+        <p><strong>رقم التواصل:</strong><br>
+        +972594662692</p>
+    </div>
+
+    <form onsubmit="sendToWhatsApp(event)">
+        <input type="text" id="name" placeholder="الاسم الكامل" required>
+        <input type="tel" id="phone" placeholder="رقم الهاتف" required>
+
+        <select id="visaType" required>
+            <option value="" disabled selected>اختر نوع التأشيرة</option>
+            <option>تأشيرة سياحية</option>
+            <option>تأشيرة علاجية</option>
+            <option>تأشيرة دراسة</option>
+            <option>تأشيرة عمل</option>
+            <option>تأشيرة زيارة</option>
+        </select>
+
+        <textarea id="details" placeholder="اكتب الدولة المطلوبة أو تفاصيل إضافية"></textarea>
+
+        <button type="submit">إرسال عبر واتساب</button>
+    </form>
+</section>
+
+<footer>
+© 2026 سافر للسياحة والسفر - جميع الحقوق محفوظة
+</footer>
+
+<script>
+function sendToWhatsApp(event){
+    event.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let phone = document.getElementById("phone").value;
+    let visa = document.getElementById("visaType").value;
+    let details = document.getElementById("details").value;
+
+    let message = `طلب جديد:%0Aالاسم: ${name}%0Aرقم الهاتف: ${phone}%0Aنوع التأشيرة: ${visa}%0Aتفاصيل: ${details}`;
+
+    window.open(`https://wa.me/972594662692?text=${message}`, '_blank');
+}
+</script>
+
+</body>
+</html>
